@@ -92,6 +92,7 @@ en logs, reportes o archivos.
 ## Reportes y entrega
 
 - PDF de entrega: [`output/pdf/seccion2-rest-api-todo-ly.pdf`](output/pdf/seccion2-rest-api-todo-ly.pdf).
+- Informe Word editable: [`output/word/seccion2-rest-api-todo-ly.docx`](output/word/seccion2-rest-api-todo-ly.docx).
 - Reporte generado por cada ejecución: `build/reports/cucumber/cucumber.html`.
 - Resultado estructurado: `build/reports/cucumber/cucumber.json` y `cucumber.xml`.
 - Reporte Gradle: `build/reports/tests/test/index.html`.
