@@ -1,0 +1,11 @@
+{
+  "executed_at_local": "20/10/2026 09:45:24",
+  "timezone": "America/La_Paz",
+  "command": ".\\gradlew.bat clean test --no-daemon",
+  "result": "BUILD SUCCESSFUL",
+  "scenarios": 1,
+  "steps": 11,
+  "hooks": 2,
+  "runtime": "OpenJDK 27 / Windows / Gradle 9.8.0",
+  "development_incident": "Una ejecucion anterior completo el CRUD del proyecto, pero dejo una cuenta temporal porque DELETE /api/user.json devolvio 404. La ruta fue corregida a /api/user/{id}.json. Las credenciales anteriores no se guardaron; esa cuenta no pudo recuperarse para eliminarla. La ejecucion final si elimino su cuenta."
+}

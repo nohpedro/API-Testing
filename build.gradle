@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.nohpedro'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:6.0.0')
+    testImplementation 'org.junit.platform:junit-platform-suite'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'io.cucumber:cucumber-java:8.0.4'
+    testImplementation 'io.cucumber:cucumber-junit-platform-engine:8.0.4'
+    testImplementation 'io.rest-assured:rest-assured:6.0.1'
+    testImplementation 'io.rest-assured:json-schema-validator:6.0.1'
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.22.0'
+    testImplementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.22.0'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 17
+}
+
+test {
+    useJUnitPlatform()
+    systemProperty 'cucumber.filter.tags', providers.gradleProperty('suite').getOrElse('@Seccion2')
+    systemProperty 'cucumber.execution.dry-run', providers.gradleProperty('dryRun').getOrElse('false')
+    systemProperty 'cucumber.plugin', 'pretty,html:build/reports/cucumber/cucumber.html,json:build/reports/cucumber/cucumber.json,junit:build/reports/cucumber/cucumber.xml'
+    systemProperty 'cucumber.publish.quiet', 'true'
+    outputs.upToDateWhen { false }
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+        showStandardStreams = true
+    }
+}
+
+// Conserva el comando usado por el repositorio de clase.
+tasks.register('cucumberCli') {
+    group = 'verification'
+    description = 'Ejecuta Cucumber mediante JUnit Platform; admite -Psuite=@Seccion2'
+    dependsOn test
+}

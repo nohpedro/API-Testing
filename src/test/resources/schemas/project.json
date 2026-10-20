@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Contrato minimo de proyecto Todo.ly",
+  "type": "object",
+  "required": ["Id", "Content", "Deleted"],
+  "properties": {
+    "Id": {"type": "integer", "minimum": 1},
+    "Content": {"type": "string", "minLength": 1},
+    "Deleted": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}

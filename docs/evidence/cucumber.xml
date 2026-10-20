@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="8.355" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-20T13:45:24.051015300Z">
+<testcase classname="Gestion de proyectos con token en Todo.ly" name="TC-API-001 Crear usuario y gestionar un proyecto con token" time="8.215">
+<system-out><![CDATA[
+Given creo un usuario nuevo de prueba.......................................passed
+And obtengo su token de autenticacion.......................................passed
+When creo el proyecto "Proyecto Seccion 2" usando el token..................passed
+Then el proyecto creado se llama "Proyecto Seccion 2".......................passed
+And al consultar el proyecto su nombre es "Proyecto Seccion 2"..............passed
+When actualizo el nombre a "Proyecto Seccion 2 actualizado" usando el token..passed
+Then el proyecto conserva su identificador y se llama "Proyecto Seccion 2 actualizado"..passed
+And al consultar el proyecto su nombre es "Proyecto Seccion 2 actualizado"..passed
+When elimino el proyecto usando el token....................................passed
+Then el proyecto eliminado se llama "Proyecto Seccion 2 actualizado" y esta marcado como eliminado..passed
+And el proyecto ya no aparece en la lista de proyectos activos..............passed
+]]></system-out>
+</testcase>
+</testsuite>
